@@ -1,0 +1,26 @@
+/* There's background from https://wavier.art/ */
+.header {
+    grid-area: header;
+    height: 21vh;
+    background-color: #8ca9d3;
+    position: relative;
+    }
+    
+    .header::before {
+      content: "";
+      width: 100%;
+      height: 88px;
+      position: absolute;
+      bottom: -0.3%;
+      left: 0;
+      background-size: auto;
+      background-repeat: repeat no-repeat;
+      background-position: 35vw bottom;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  96' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 70L50 66C100 62 200 53 300 36C400 18 500 -7 600 1C700 10 800 53 900 70C1000 88 1100 79 1150 75L1200 70V96H1150C1100 96 1000 96 900 96C800 96 700 96 600 96C500 96 400 96 300 96C200 96 100 96 50 96H0V70Z' fill='%23FFF5EE'/></svg>");
+    }
+
+    .header img {
+      width: 120px;
+      padding-left: 20px;
+      padding-top: 20px;
+    }
