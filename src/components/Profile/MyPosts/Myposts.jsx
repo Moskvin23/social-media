@@ -11,10 +11,7 @@ function Myposts() {
             <Post />
             <Post />
             <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+          
             </div></>
         )
 }
