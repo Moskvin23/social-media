@@ -1,8 +1,48 @@
 .nav {
     grid-area: nav;
    
-    }
+ }
     
-.item {
-   padding-left: 5px; 
+.item a {
+    position: relative;
+   padding-left: 10px; 
+   text-decoration: none;
+   color:#000000;
 }
+
+   .item a:hover{
+    color:#8ca9d3;
+   }
+
+ .item a:hover:before {
+	-webkit-transform: scaleX(1);
+	-ms-transform: scaleX(1);
+	transform: scaleX(1);
+	-webkit-transform-origin: left;
+	-ms-transform-origin: left;
+	transform-origin: left;
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: -webkit-transform 0.25s;
+	-o-transition: transform 0.25s;
+	transition: transform 0.25s;
+	transition: transform 0.25s, -webkit-transform 0.25s;
+}
+ .item a:before{
+    content: '';
+	width: 80%;
+	height: 1px;
+	background-color: #8ca9d3;
+	position: absolute;
+	left: 0.5; bottom: -4px;
+	-webkit-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: right;
+	-ms-transform-origin: right;
+	transform-origin: right;
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: -webkit-transform 0.25s;
+	-o-transition: transform 0.25s;
+	transition: transform 0.25s;
+	transition: transform 0.25s, -webkit-transform 0.25s;
+ }
