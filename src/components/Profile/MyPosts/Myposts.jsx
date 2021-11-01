@@ -1,19 +1,35 @@
 import React from 'react'
- import style from './Myposts.module.css'
- import Post from './Post/Post'
+import style from './MyPosts.module.css'
+import Post from './Post/Post'
 
-function Myposts() {
+
+let postsData = [
+    {id: 1, post: 'Hey :-))'},
+    {id: 2, post: 'What`s up bro?'},
+    {id: 3, post: 'I`m fine, and u?'}
+    ]
+
+
+
+ function MyPosts(props) {
+  
+  
+    let postElements = postsData.map(p => <Post post={p.post}/>)
+
     return (
-       <><div className={style.item}>
-            My posts
-        </div>
-        <div>
-            <Post />
-            <Post />
-            <Post />
-          
-            </div></>
+        <div className={style.postsBlock}>
+            <h2 className={style.h3}>My posts</h2>
+            <div>
+            <textarea></textarea>
+            <button>Add</button>
+            
+            </div>
+        <div className={style.posts}>
+        {postElements}
+           
+            </div>
+            </div>
         )
 }
 
-export default Myposts
+export default MyPosts;
