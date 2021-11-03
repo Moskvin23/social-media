@@ -9,18 +9,21 @@ import News from "./components/News/News";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+  
+ 
+
   return (
     <Router>
       <div className="wave-container">
         <Header />
         <Navbar />
         <div className="app-wave-content">
-          <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/news" component={News} />
+          <Route path="/dialogs" render = {() => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData}/>} />
+          <Route path="/profile" render = {() => <Profile postsData={props.postsData}/>} />
+          <Route path="/music" render = {() => <Music/>} />
+          <Route path="/settings" render = {() => <Settings/>} /> 
+          <Route path="/news" render = {() => <News/>} />
           
         </div>
       </div>

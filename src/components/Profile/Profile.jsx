@@ -1,14 +1,14 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
-import style from "./Profile.module.css";
 
 
 
-function Profile() {
+function Profile(props) {
+
   return (
    <div> 
     <div> here will be avatar + description</div>
-       <MyPosts />
+       <MyPosts postsData={props.postsData}/>
      
       
     </div>

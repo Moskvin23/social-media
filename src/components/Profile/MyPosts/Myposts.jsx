@@ -3,18 +3,10 @@ import style from './MyPosts.module.css'
 import Post from './Post/Post'
 
 
-let postsData = [
-    {id: 1, post: 'Hey :-))'},
-    {id: 2, post: 'What`s up bro?'},
-    {id: 3, post: 'I`m fine, and u?'}
-    ]
-
-
-
  function MyPosts(props) {
   
   
-    let postElements = postsData.map(p => <Post post={p.post}/>)
+    let postElements = props.postsData.map(p => <Post post={p.post}/>)
 
     return (
         <div className={style.postsBlock}>
