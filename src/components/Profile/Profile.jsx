@@ -8,7 +8,7 @@ function Profile(props) {
   return (
    <div> 
     <div> here will be avatar + description</div>
-       <MyPosts postsData={props.postsData}/>
+       <MyPosts postsData={props.state.postsData} addPost={props.addPost}/>
      
       
     </div>

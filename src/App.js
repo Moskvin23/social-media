@@ -11,16 +11,18 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const App = (props) => {
   
- 
 
   return (
     <Router>
       <div className="wave-container">
         <Header />
-        <Navbar />
+        <Navbar />  
         <div className="app-wave-content">
-          <Route path="/dialogs" render = {() => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData}/>} />
-          <Route path="/profile" render = {() => <Profile postsData={props.postsData}/>} />
+          <Route path="/dialogs" render = {() => <Dialogs state={props.state.messagePage}/>} />
+          <Route path="/profile"
+           render = {() => <Profile 
+          state={props.state.profilePage} 
+          addPost={props.addPost} />} />
           <Route path="/music" render = {() => <Music/>} />
           <Route path="/settings" render = {() => <Settings/>} /> 
           <Route path="/news" render = {() => <News/>} />
