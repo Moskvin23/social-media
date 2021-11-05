@@ -1,10 +1,8 @@
-let rerenderEntireTree = ()=> {
-   
-}
+import profileReducer from "./profile-reducer";
+import messageReducer from "./message-reducer";
+
 let store = {
-    
-}
-    let state = {
+    _state: {
 
         profilePage  : {
             postsData : [
@@ -34,19 +32,33 @@ let store = {
               ]
         }
            
-    }
+    },
+    getState(){
+        return this._state;
+    },
+    _rerenderEntireTree (){
+    },
+    addPost(postData) {
+        let newPost = {
+            id: 5,
+            post : postData   
+        };
+    
+        this._state.profilePage.postsData.push(newPost);
+        this._rerenderEntireTree(this._state);
+    },
+    subscriber(observer){
+        this._rerenderEntireTree = observer
+      },
+    dispatch(action){
+       this._state.profilePage = profileReducer(this._state.profilePage , action);
+       this._state.messagePage = messageReducer(this._state.messagePage , action);
 
-    export let addPost = (postData)=> {
-    let newPost = {
-        id: 5,
-        post : postData   
-    };
-
-    state.profilePage.postsData.push(newPost);
-    rerenderEntireTree(state);
+       this._rerenderEntireTree(this._state);
+      }
 }
-export let subscriber = (observer)=>{
-    rerenderEntireTree = observer
-  }
+   
 
-    export default state;
+     
+
+    export default store;
