@@ -12,7 +12,7 @@ import Post from './Post/Post'
       let text = newPostDataElement.current.value;
       props.addPost(text);
   }
-   
+  
 
     return (
         <div className={style.postsBlock}>

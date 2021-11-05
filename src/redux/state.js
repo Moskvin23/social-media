@@ -1,7 +1,9 @@
 let rerenderEntireTree = ()=> {
    
 }
-
+let store = {
+    
+}
     let state = {
 
         profilePage  : {
